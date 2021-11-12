@@ -115,12 +115,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -149,6 +149,86 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://github.com/maize-j/maize-j.github.io/2021/11/12/SpringBoot%E4%B8%AD-properties%E5%92%8C-yml%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="苞谷洁子">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="maize">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/12/SpringBoot%E4%B8%AD-properties%E5%92%8C-yml%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">SpringBoot中.properties和.yml的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-11-12 15:01:02 / Modified: 15:45:31" itemprop="dateCreated datePublished" datetime="2021-11-12T15:01:02+08:00">2021-11-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>两者都是Springboot的配置文件，放在src/main/resources目录下，均以application命名，即application.properties、application.yml</p>
+<p>两者的主要区别分为下面几点：</p>
+<ol>
+<li><p>语法不同</p>
+<p>properties以“.”表示层级关系，以常用的”=”来赋值，类似于key-value的形式</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span> = <span class="string">8001</span></span><br><span class="line"><span class="meta">spring.datasource.type</span> = <span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line"><span class="meta">spring.datasource.driver-class-name</span> = <span class="string">org.gjt.mm.mysql.Driver</span></span><br></pre></td></tr></table></figure>
+
+<p>yml用缩进表示层级关系，因此yml呈现出来的是树形结构。且在yml中以“:”表示properties中的层级关系“.”和赋值“=”，在赋值时，value和“:”之间需要有空格，如下例：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8001</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">com.alibaba.druid.pool.DruidDataSource</span>      </span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">org.gjt.mm.mysql.Driver</span>             </span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，yml需要严格遵守缩进表示的层级关系，缩进用空格，相同层级之间需要对其。</p>
+</li>
+<li><p>加载顺序不同</p>
+<p>正常情况下会先加载.yml，然后再加载.properties，因此当yml和properties文件中定义了相同的配置，由于properties后读取的，会将yml中读取的信息覆盖掉。总结就是yml和properties定义的不同的配置都会被读取，相同的配置会读取properties中的。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
